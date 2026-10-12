@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lista de compras da semana">
+  <title>Quicklist | Compras da semana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="brand" aria-label="Quicklist">
+    <svg class="brand__mark" viewBox="0 0 34 24" aria-hidden="true">
+      <rect x="0" y="2" width="6" height="5" rx="2.5"></rect>
+      <rect x="9" y="2" width="21" height="5" rx="2.5"></rect>
+      <rect x="0" y="10" width="25" height="5" rx="2.5"></rect>
+      <rect x="28" y="10" width="6" height="5" rx="2.5"></rect>
+      <rect x="0" y="18" width="21" height="5" rx="2.5"></rect>
+    </svg>
+    <span>quicklist</span>
+  </header>
+
+  <main class="shopping-list">
+    <a class="back-link" href="#" aria-label="Voltar para a página anterior">
+      <svg viewBox="0 0 20 20" aria-hidden="true">
+        <path d="M15.833 10H4.167M8.333 5.833 4.167 10l4.166 4.167"></path>
+      </svg>
+      Voltar
+    </a>
+
+    <h1>Compras da semana</h1>
+
+    <form class="add-item" id="add-item-form" novalidate>
+      <div class="field-group">
+        <label class="sr-only" for="item-input">Novo item</label>
+        <input id="item-input" name="item" type="text" placeholder="Adicione um novo item" autocomplete="off" aria-describedby="input-error">
+        <p class="input-error" id="input-error" role="alert"></p>
+      </div>
+      <button class="add-button" type="submit">Adicionar item</button>
+    </form>
+
+    <ul class="items" id="items-list" aria-label="Itens da lista de compras"></ul>
+
+    <div class="toast" id="removal-toast" role="status" aria-live="polite" hidden>
+      <svg class="toast__icon" viewBox="0 0 20 20" aria-hidden="true">
+        <circle cx="10" cy="10" r="9"></circle>
+        <path d="M10 5.7v4.7M10 14.1h.01"></path>
+      </svg>
+      <span>O item foi removido da lista</span>
+      <button class="toast__close" type="button" aria-label="Fechar alerta">
+        <svg viewBox="0 0 20 20" aria-hidden="true">
+          <path d="m5 5 10 10M15 5 5 15"></path>
+        </svg>
+      </button>
+    </div>
+  </main>
+</body>
+</html>
